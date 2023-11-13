@@ -15,7 +15,7 @@ export default function Home() {
   const [formValues, setFormValues] = useState<FormData|null>(null)
    const handleFormSubmit = async(formData: FormData) => {
        try {
-         let { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/calculate-score`, formData);
+         let { data } = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/api/calculate-score`, formData);
          setFormValues(formData)
          setFinancialHealthScore(data.score)
          setReset(true);
